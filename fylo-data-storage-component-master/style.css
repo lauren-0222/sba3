@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import "../node_modules/bootstrap/scss/grid";
+
+:root {
+  --color-primary: linear-gradient(
+    to right,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
+
+  --color-pale-blue: hsl(243, 100%, 93%);
+  --color-grayish-blue: hsl(229, 7%, 55%);
+  --color-dark-blue: hsl(228, 56%, 26%);
+  --color-very-dark-blue: hsl(229, 57%, 11%);
+}
+body {
+  font-size: 0.875rem;
+  font-family: "Raleway", sans-serif;
+  color: white;
+}
+body::before {
+  content: "";
+  background-image: url("./images/bg-mobile.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+  /* height: 100%; */
+  width: 100%;
+}
+.fylo-data-storage {
+  background-color: var(--color-very-dark-blue);
+  padding-top: 30vh;
+}
+.background-dark-blue {
+  background-color: var(--color-dark-blue);
+}
+.fylo-logo-icons {
+  padding: 2.75rem;
+
+  border-radius: 5px;
+  border-top-right-radius: 100px;
+}
+.fylo-icon {
+  background-color: var(--color-very-dark-blue);
+  border-radius: 10px;
+  margin-top: 2.25rem;
+  margin-right: 1.5rem;
+
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fylo-icon > img {
+  width: 1.5rem;
+}
+.fylo-usage {
+  padding: 2.75rem;
+  position: relative;
+  border-radius: 5px;
+  margin: 2rem 0;
+}
+.fylo-usage-left {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-grayish-blue);
+}
+.to-bottom {
+  align-self: flex-end;
+}
+.fylo-progress,
+.fylo-progress-bar {
+  border-radius: 10px;
+}
+.fylo-progress {
+  background-color: var(--color-very-dark-blue);
+}
+.fylo-progress-bar {
+  background: var(--color-primary);
+  display: flex;
+  align-items: flex-end;
+}
+.dot {
+  background-color: white;
+  border-radius: 10px;
+  margin: auto 0.2rem;
+  padding: 0.4rem;
+}
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-space-even {
+  display: flex;
+  justify-content: space-even;
+}
+.status-bubble {
+  position: absolute;
+  top: 80%;
+  right: 50%;
+  transform: translateX(50%);
+  background: white;
+  border-radius: 0.4em;
+  color: var(--color-very-dark-blue);
+  padding: 1rem 2rem;
+}
+
+.status-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: white;
+  border-bottom: 0;
+  border-right: 0;
+  /* margin-left: -10px; */
+  margin-bottom: -10px;
+  visibility: hidden;
+}
+.footer {
+  margin-top: 2rem;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  body::before {
+    background-image: url("./images/bg-desktop.svg");
+    top: 40vh;
+  }
+
+  .fylo-usage {
+    margin: 0;
+  }
+  .status-bubble {
+    position: absolute;
+    top: -30%;
+    right: 0;
+    transform: translateX(-30%);
+
+    border-bottom-right-radius: 0;
+  }
+  .status-bubble::after {
+    visibility: visible;
+  }
+}
